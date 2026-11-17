@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shafa Wali Furniture &amp; More — Luxury Living in Kaduna &amp; Zaria</title>
+<meta name="description" content="Shafa Wali Furniture & More — luxury home & office furniture showroom in Kaduna and Zaria, Nigeria. Ready-made imported collections and bespoke custom-crafted furniture. Order via WhatsApp." />
+<meta name="theme-color" content="#2B1D14" />
+
+<!-- Tailwind via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream:       '#FAF6F0',
+          'cream-2':   '#F2EBE0',
+          'cream-3':   '#EAE0D2',
+          espresso:    '#2B1D14',
+          charcoal:    '#1F1611',
+          gold:        '#B8893A',
+          'gold-2':    '#C9A66B',
+          'gold-3':    '#8C6B3D',
+          bronze:      '#7A5A2E',
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans:  ['Inter', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          'soft':  '0 10px 40px -10px rgba(43, 29, 20, 0.18)',
+          'card':  '0 18px 50px -20px rgba(43, 29, 20, 0.25)',
+          'gold':  '0 10px 30px -10px rgba(184, 137, 58, 0.45)',
+        },
+        maxWidth: { '8xl': '88rem' }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FAF6F0; }
+
+  /* Hero gradient + image overlay */
+  .hero-bg {
+    background-image:
+      linear-gradient(180deg, rgba(31,22,17,0.85) 0%, rgba(31,22,17,0.55) 45%, rgba(31,22,17,0.78) 100%),
+      url('https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aa7162fe85a4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  @media (min-width: 1024px) {
+    .hero-bg { background-attachment: fixed; }
+  }
+
+  /* Gold divider line */
+  .gold-rule {
+    display:inline-block; height:1px; width:64px;
+    background: linear-gradient(90deg, transparent, #B8893A, transparent);
+  }
+  .gold-rule-l { display:block; height:1px; width:120px; background: linear-gradient(90deg, #B8893A, transparent); }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Card hover */
+  .product-card { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease; }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 28px 60px -22px rgba(43,29,20,.35); }
+  .product-card .card-img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .product-card:hover .card-img { transform: scale(1.06); }
+
+  /* Filter tabs */
+  .tab-btn { transition: all .3s ease; }
+  .tab-btn.active {
+    background: #2B1D14; color: #FAF6F0; border-color: #2B1D14;
+  }
+  .tab-btn:not(.active):hover { border-color: #B8893A; color: #B8893A; }
+
+  /* WA button shine */
+  .btn-wa {
+    background: linear-gradient(135deg, #1F1611 0%, #3a2a1c 100%);
+    transition: all .3s ease;
+  }
+  .btn-wa:hover { background: linear-gradient(135deg, #B8893A 0%, #8C6B3D 100%); transform: translateY(-1px); }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #C9A66B 0%, #B8893A 50%, #8C6B3D 100%);
+    transition: all .3s ease;
+  }
+  .btn-gold:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(184,137,58,.55); }
+
+  /* Modal */
+  .modal-backdrop {
+    background: rgba(31,22,17,0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  /* Decorative serif */
+  .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.01em; }
+
+  /* Marquee for announcement bar */
+  .marquee {
+    display: inline-block; white-space: nowrap;
+    animation: marquee 28s linear infinite;
+  }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .marquee-wrap:hover .marquee { animation-play-state: paused; }
+
+  /* Soft section transitions */
+  section { scroll-margin-top: 90px; }
+
+  /* Map embed wrapper */
+  .map-frame { filter: sepia(.18) saturate(1.05) contrast(.95); }
+
+  /* Selection */
+  ::selection { background: #B8893A; color: #FAF6F0; }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #F2EBE0; }
+  ::-webkit-scrollbar-thumb { background: #B8893A; border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: #8C6B3D; }
+</style>
+</head>
+
+<body class="text-charcoal font-sans antialiased">
+
+<!-- ============ TOP ANNOUNCEMENT BAR ============ -->
+<div class="bg-espresso text-cream text-xs sm:text-sm">
+  <div class="marquee-wrap overflow-hidden py-2 px-4">
+    <div class="marquee">
+      <span class="mx-6">✦ Now accepting bespoke orders for the festive season</span>
+      <span class="mx-6">✦ Two showrooms — Kaduna &amp; Zaria</span>
+      <span class="mx-6">✦ Order via WhatsApp: +234 907 880 2181</span>
+      <span class="mx-6">✦ Strictly No-Refund / No-Exchange — please inspect before payment</span>
+      <span class="mx-6">✦ Live video verification available on request</span>
+      <!-- duplicate for seamless loop -->
+      <span class="mx-6">✦ Now accepting bespoke orders for the festive season</span>
+      <span class="mx-6">✦ Two showrooms — Kaduna &amp; Zaria</span>
+      <span class="mx-6">✦ Order via WhatsApp: +234 907 880 2181</span>
+      <span class="mx-6">✦ Strictly No-Refund / No-Exchange — please inspect before payment</span>
+      <span class="mx-6">✦ Live video verification available on request</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header id="nav" class="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-cream-3 transition-all">
+  <nav class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <!-- Brand -->
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-espresso flex items-center justify-center ring-2 ring-gold/40 group-hover:ring-gold transition">
+          <span class="display text-cream text-2xl font-semibold leading-none">S</span>
+        </div>
+        <div class="leading-tight">
+          <div class="display text-xl sm:text-2xl font-semibold text-espresso">Shafa Wali</div>
+          <div class="text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-gold-3">Furniture &amp; More</div>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-9 text-sm font-medium text-espresso/80">
+        <a href="#collections" class="hover:text-gold transition">Collections</a>
+        <a href="#why" class="hover:text-gold transition">Why Us</a>
+        <a href="#showrooms" class="hover:text-gold transition">Showrooms</a>
+        <a href="#policy" class="hover:text-gold transition">Store Policy</a>
+        <a href="#contact" class="hover:text-gold transition">Contact</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/2349078802181?text=Hello%20Shafa%20Wali%20Furniture%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+           target="_blank" rel="noopener"
+           class="hidden sm:inline-flex items-center gap-2 btn-wa text-cream px-5 py-2.5 rounded-full text-sm font-medium shadow-soft">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2zm0 18.4h-.01a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.3 8.3 0 0 1-1.27-4.4c0-4.6 3.74-8.34 8.35-8.34 2.23 0 4.33.87 5.9 2.45a8.3 8.3 0 0 1 2.45 5.9c0 4.6-3.74 8.34-8.35 8.34z"/></svg>
+          Order on WhatsApp
+        </a>
+        <button id="menuBtn" class="lg:hidden p-2 text-espresso" aria-label="Open menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div id="mobileMenu" class="lg:hidden hidden pb-5 border-t border-cream-3">
+      <div class="flex flex-col gap-1 pt-4 text-espresso">
+        <a href="#collections" class="mobile-link py-3 px-2 border-b border-cream-3 hover:text-gold">Collections</a>
+        <a href="#why"        class="mobile-link py-3 px-2 border-b border-cream-3 hover:text-gold">Why Us</a>
+        <a href="#showrooms"  class="mobile-link py-3 px-2 border-b border-cream-3 hover:text-gold">Showrooms</a>
+        <a href="#policy"     class="mobile-link py-3 px-2 border-b border-cream-3 hover:text-gold">Store Policy</a>
+        <a href="#contact"    class="mobile-link py-3 px-2 border-b border-cream-3 hover:text-gold">Contact</a>
+        <a href="https://wa.me/2349078802181" target="_blank" rel="noopener" class="btn-wa text-cream text-center py-3 rounded-full mt-3">Order on WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative text-cream overflow-hidden">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="min-h-[88vh] flex flex-col justify-center py-20 lg:py-28 max-w-3xl">
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="gold-rule"></span>
+          <span class="text-xs sm:text-sm tracking-[0.35em] uppercase text-gold-2 font-medium">Kaduna &middot; Zaria &middot; Nigeria</span>
+        </div>
+        <h1 class="display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[1.02] mb-6">
+          Shafa Wali<br><em class="text-gold-2 font-medium">Furniture &amp; More</em>
+        </h1>
+        <p class="display italic text-2xl sm:text-3xl text-cream/85 mb-5">Luxury Living, Classic Elegance &amp; Custom Craftsmanship in Kaduna &amp; Zaria.</p>
+        <p class="text-base sm:text-lg text-cream/75 max-w-2xl mb-10 leading-relaxed">
+          Transforming homes and offices with ready-made imported collections and bespoke, custom-crafted furniture tailored to your space — curated by founder <span class="text-gold-2 font-medium">Hajjia Shafa Wali</span>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#collections" class="btn-gold text-espresso font-medium px-8 py-4 rounded-full text-center inline-flex items-center justify-center gap-2 shadow-gold">
+            Explore Collections
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/2349078802181?text=Hello%20Shafa%20Wali%20Furniture%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 border border-cream/40 text-cream px-8 py-4 rounded-full hover:bg-cream hover:text-espresso transition">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2zm0 18.4h-.01a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.3 8.3 0 0 1-1.27-4.4c0-4.6 3.74-8.34 8.35-8.34 2.23 0 4.33.87 5.9 2.45a8.3 8.3 0 0 1 2.45 5.9c0 4.6-3.74 8.34-8.35 8.34z"/></svg>
+            Order via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-cream/60 text-xs tracking-[0.3em] uppercase flex flex-col items-center gap-2 animate-pulse">
+      <span>Scroll</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER STRIP ============ -->
+<section class="bg-cream-2 border-y border-cream-3">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12 py-10 lg:py-14">
+    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-10 text-center md:text-left reveal">
+      <div class="shrink-0">
+        <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-espresso flex items-center justify-center ring-4 ring-gold/30 mx-auto">
+          <span class="display text-cream text-3xl lg:text-4xl font-semibold">SW</span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold-3 mb-2">Founder &amp; CEO</p>
+        <h3 class="display text-3xl lg:text-4xl text-espresso font-semibold mb-2">Hajjia Shafa Wali</h3>
+        <p class="text-espresso/75 max-w-3xl leading-relaxed">
+          “Every piece in our showroom is selected or commissioned with one question in mind — <em class="text-gold-3 not-italic font-medium">will this make a home feel truly lived-in and loved?</em> That is the standard we hold, whether you walk into our Kaduna flagship or our Zaria branch.”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLLECTIONS ============ -->
+<section id="collections" class="py-20 lg:py-28">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <!-- Section heading -->
+    <div class="text-center mb-14 lg:mb-16 reveal">
+      <p class="text-xs tracking-[0.35em] uppercase text-gold-3 mb-3">The Catalog</p>
+      <h2 class="display text-4xl sm:text-5xl lg:text-6xl font-semibold text-espresso mb-4">Curated Collections</h2>
+      <div class="flex justify-center"><span class="gold-rule"></span></div>
+      <p class="mt-5 max-w-2xl mx-auto text-espresso/70 leading-relaxed">
+        Browse by room. Every item is available by direct inquiry — tap <em class="text-gold-3 not-italic font-medium">Inquire on WhatsApp</em> for live stock, dimensions, finishes, and delivery coordination.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+      <button data-filter="all"        class="tab-btn active border border-espresso/30 text-espresso px-5 py-2.5 rounded-full text-sm font-medium">All Pieces</button>
+      <button data-filter="living"     class="tab-btn border border-espresso/30 text-espresso px-5 py-2.5 rounded-full text-sm font-medium">Living Room</button>
+      <button data-filter="bedroom"    class="tab-btn border border-espresso/30 text-espresso px-5 py-2.5 rounded-full text-sm font-medium">Bedroom</button>
+      <button data-filter="dining"     class="tab-btn border border-espresso/30 text-espresso px-5 py-2.5 rounded-full text-sm font-medium">Dining &amp; Kitchen</button>
+      <button data-filter="office"     class="tab-btn border border-espresso/30 text-espresso px-5 py-2.5 rounded-full text-sm font-medium">Office &amp; Custom</button>
+    </div>
+
+    <!-- Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+
+      <!-- 1. Sofa -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="living">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5f6535d1720f.jpg" alt="Royal Tufted Sofa Set" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Living Room</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Royal Tufted Sofa Set</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Plush velvet and leather seating sets for modern family lounges — deep tufting, hand-finished frames.</p>
+          <button data-wa-product="Royal Tufted Sofa Set" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 2. Console -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="living">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c004aa8b2378.jpg" alt="Minimalist TV Console and Coffee Tables" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Living Room</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">TV Consoles &amp; Coffee Tables</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Marble-top and gold-accented center tables and media units — minimal lines, warm metallic detailing.</p>
+          <button data-wa-product="Minimalist TV Consoles & Coffee Tables" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 3. Bed -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="bedroom">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0008fda43ee0.jpg" alt="Upholstered King and Queen Bed Frames" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Bedroom</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Upholstered Bed Frames</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Luxury padded headboards in King &amp; Queen sizes with matching bedside drawers — fabric or leather.</p>
+          <button data-wa-product="Upholstered King & Queen Bed Frames" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 4. Vanity -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="bedroom">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c5195885ed61.jpg" alt="Mirrored Vanity and Dressing Tables" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Bedroom</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Mirrored Vanity Sets</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Sleek vanity dressing tables with LED mirrors and built-in storage — Hollywood-glam styling at home.</p>
+          <button data-wa-product="Mirrored Vanity & Dressing Tables" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 5. Dining -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="dining">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0ecde8d9d7e3.jpg" alt="6-Seater and 8-Seater Marble Dining Sets" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Dining &amp; Kitchen</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Marble Dining Sets</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">6-seater &amp; 8-seater marble-top dining tables paired with cushioned chairs — a true statement centerpiece.</p>
+          <button data-wa-product="6-Seater & 8-Seater Marble Dining Sets" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 6. Kitchen -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="dining">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/78faf6946e58.jpg" alt="Custom Fitted Kitchen Cabinets" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Dining &amp; Kitchen</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Custom Fitted Kitchens</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Made-to-measure modern cabinetry built to your exact kitchen dimensions — site visit &amp; 3D layout included.</p>
+          <button data-wa-product="Custom Fitted Kitchen Cabinets" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 7. Office -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="office">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/94667f4cc297.png" alt="Executive Office Desks and Ergonomic Chairs" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Office &amp; Custom</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Executive Office Desks</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Prestige wooden and leather office setups — desks, ergonomic chairs and matching storage for the corner office.</p>
+          <button data-wa-product="Executive Office Desks & Ergonomic Chairs" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+      <!-- 8. Custom -->
+      <article class="product-card bg-cream rounded-2xl overflow-hidden border border-cream-3 shadow-soft reveal" data-cat="office">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7cddaef0f434.jpg" alt="Custom Interior Pieces" class="card-img w-full h-full object-cover" loading="lazy">
+          <div class="absolute top-3 left-3 bg-cream/95 text-espresso text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full">Office &amp; Custom</div>
+        </div>
+        <div class="p-6">
+          <h3 class="display text-2xl font-semibold text-espresso mb-2">Custom Interior Pieces</h3>
+          <p class="text-sm text-espresso/70 leading-relaxed mb-5">Tailored woodwork and upholstery designed to your specifications — bring a sketch, we build it.</p>
+          <button data-wa-product="Custom Interior Pieces" class="wa-btn w-full btn-wa text-cream py-3 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            Inquire on WhatsApp
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Empty state (no JS filter hit) -->
+    <p id="emptyState" class="hidden text-center text-espresso/60 mt-12 italic">No pieces in this category yet — ask us on WhatsApp about custom orders.</p>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section id="why" class="py-20 lg:py-28 bg-espresso text-cream relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none"
+       style="background-image: radial-gradient(circle at 20% 20%, #C9A66B 0, transparent 40%), radial-gradient(circle at 80% 80%, #B8893A 0, transparent 40%);"></div>
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+    <div class="text-center mb-14 reveal">
+      <p class="text-xs tracking-[0.35em] uppercase text-gold-2 mb-3">Why Shafa Wali</p>
+      <h2 class="display text-4xl sm:text-5xl lg:text-6xl font-semibold mb-4">A Different Standard</h2>
+      <div class="flex justify-center"><span class="gold-rule"></span></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Card 1 -->
+      <div class="reveal bg-charcoal/60 border border-cream/10 rounded-2xl p-8 lg:p-10 hover:border-gold/40 transition group">
+        <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:bg-gold/25 transition">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A66B" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3 class="display text-2xl font-semibold mb-3 text-cream">Ready-Made &amp; Bespoke</h3>
+        <p class="text-cream/70 leading-relaxed text-sm">Shop immediate showroom stock or commission custom sizes and finishes. Bring your dimensions, photos or sketches — we'll handle the rest, from material selection to final installation.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="reveal bg-charcoal/60 border border-cream/10 rounded-2xl p-8 lg:p-10 hover:border-gold/40 transition group">
+        <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:bg-gold/25 transition">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A66B" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="display text-2xl font-semibold mb-3 text-cream">Two Convenient Showrooms</h3>
+        <p class="text-cream/70 leading-relaxed text-sm">Walk in and inspect before you buy. Our flagship in Ungwan Rimi, Kaduna and our Zaria branch on Manchester Road both carry rotating stock — and live previews are available by video for distant buyers.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="reveal bg-charcoal/60 border border-cream/10 rounded-2xl p-8 lg:p-10 hover:border-gold/40 transition group">
+        <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mb-6 group-hover:bg-gold/25 transition">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A66B" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 class="display text-2xl font-semibold mb-3 text-cream">Direct Concierge Ordering</h3>
+        <p class="text-cream/70 leading-relaxed text-sm">No checkout carts, no automated replies. Fast human responses, live showroom video previews, and delivery coordination — all handled over WhatsApp and Instagram DM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWROOM LOCATIONS ============ -->
+<section id="showrooms" class="py-20 lg:py-28">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="text-center mb-14 lg:mb-16 reveal">
+      <p class="text-xs tracking-[0.35em] uppercase text-gold-3 mb-3">Visit Us</p>
+      <h2 class="display text-4xl sm:text-5xl lg:text-6xl font-semibold text-espresso mb-4">Our Showrooms</h2>
+      <div class="flex justify-center"><span class="gold-rule"></span></div>
+      <p class="mt-5 max-w-2xl mx-auto text-espresso/70 leading-relaxed">
+        Two locations across Kaduna State for in-person inspection — walk in any day, or schedule a live video walkthrough on WhatsApp.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+
+      <!-- Kaduna -->
+      <div class="reveal bg-cream rounded-3xl overflow-hidden border border-cream-3 shadow-soft">
+        <div class="aspect-[16/10] w-full overflow-hidden">
+          <iframe
+            class="map-frame w-full h-full"
+            src="https://www.google.com/maps?q=Shafa%20wali%2C%206%20Korau%20Road%2C%20Ungwan%20Rimi%2C%20Kaduna&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kaduna Showroom Map"></iframe>
+        </div>
+        <div class="p-7 lg:p-9">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-gold-3">Flagship</span>
+            <span class="gold-rule"></span>
+          </div>
+          <h3 class="display text-3xl font-semibold text-espresso mb-3">Kaduna Showroom</h3>
+          <p class="text-espresso/75 mb-5 leading-relaxed">
+            No. 6 Korau Road, close to Total Filling Station, Ungwan Rimi, Kaduna, Nigeria.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=Shafa+wali+6+Korau+Road+Ungwan+Rimi+Kaduna"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-sm font-medium text-espresso border border-espresso/30 px-4 py-2.5 rounded-full hover:bg-espresso hover:text-cream transition">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Google Maps
+            </a>
+            <a href="https://wa.me/2349078802181?text=Hello%2C%20I%27d%20like%20to%20visit%20the%20Kaduna%20showroom.%20Is%20it%20open%20today%3F"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-sm font-medium text-cream btn-wa px-4 py-2.5 rounded-full">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+              Ask before visiting
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zaria -->
+      <div class="reveal bg-cream rounded-3xl overflow-hidden border border-cream-3 shadow-soft">
+        <div class="aspect-[16/10] w-full overflow-hidden">
+          <iframe
+            class="map-frame w-full h-full"
+            src="https://www.google.com/maps?q=Wappa%20Plaza%2C%2022%20Manchester%20Road%2C%20Zaria%2C%20Kaduna&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Zaria Showroom Map"></iframe>
+        </div>
+        <div class="p-7 lg:p-9">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-gold-3">Branch</span>
+            <span class="gold-rule"></span>
+          </div>
+          <h3 class="display text-3xl font-semibold text-espresso mb-3">Zaria Branch</h3>
+          <p class="text-espresso/75 mb-5 leading-relaxed">
+            No. 22 Wappa Plaza, Manchester Road, opposite GTBank, Zaria, Kaduna State, Nigeria.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=Wappa+Plaza+22+Manchester+Road+Zaria+opposite+GTBank"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-sm font-medium text-espresso border border-espresso/30 px-4 py-2.5 rounded-full hover:bg-espresso hover:text-cream transition">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Open in Google Maps
+            </a>
+            <a href="https://wa.me/2349078802181?text=Hello%2C%20I%27d%20like%20to%20visit%20the%20Zaria%20branch.%20What%20time%20do%20you%20open%3F"
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 text-sm font-medium text-cream btn-wa px-4 py-2.5 rounded-full">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+              Ask before visiting
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORE POLICY BANNER ============ -->
+<section id="policy" class="py-16 lg:py-20 bg-cream-2 border-y border-cream-3">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-2 reveal">
+        <div class="w-16 h-16 rounded-full bg-espresso flex items-center justify-center ring-2 ring-gold/40">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A66B" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+      </div>
+      <div class="lg:col-span-7 reveal">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold-3 mb-2">Store Policy</p>
+        <h3 class="display text-3xl lg:text-4xl font-semibold text-espresso mb-3">No Refund &middot; No Exchange</h3>
+        <p class="text-espresso/80 leading-relaxed">
+          All purchases are subject to a strict <strong class="text-espresso">No-Refund and No-Exchange Policy</strong>. Customers are strongly encouraged to inspect items in our Kaduna or Zaria showrooms — or request a <strong class="text-espresso">live video verification via WhatsApp</strong> — before completing payment. Your trust matters to us; please verify before you buy.
+        </p>
+      </div>
+      <div class="lg:col-span-3 reveal flex flex-col gap-3">
+        <a href="https://wa.me/2349078802181?text=Hello%2C%20I%27d%20like%20to%20request%20a%20live%20video%20preview%20before%20placing%20my%20order."
+           target="_blank" rel="noopener"
+           class="btn-gold text-espresso font-medium px-5 py-3.5 rounded-full text-sm text-center shadow-gold">Request Video Preview</a>
+        <a href="#faq" class="text-center text-sm text-espresso/70 underline underline-offset-4 hover:text-gold">Read full FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA + FAQ ============ -->
+<section id="contact" class="py-20 lg:py-28">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+      <!-- Phones & Socials -->
+      <div class="reveal">
+        <p class="text-xs tracking-[0.35em] uppercase text-gold-3 mb-3">Talk to us</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold text-espresso mb-4">Order &amp; Inquiries</h2>
+        <div class="gold-rule-l mb-8"></div>
+        <p class="text-espresso/75 leading-relaxed mb-8 max-w-xl">
+          Reach our team directly — we respond fastest on WhatsApp during business hours (Mon–Sat, 9am–7pm WAT). Pick the line that's closest to you.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+          <a href="https://wa.me/2349078802181" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-xl border border-cream-3 hover:border-gold hover:bg-cream-2 transition group">
+            <span class="w-10 h-10 rounded-full bg-espresso flex items-center justify-center group-hover:bg-gold transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FAF6F0"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2z"/></svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.25em] uppercase text-gold-3">WhatsApp</div>
+              <div class="text-espresso font-medium">+234 907 880 2181</div>
+            </div>
+          </a>
+          <a href="tel:+2348061797766" class="flex items-center gap-3 p-4 rounded-xl border border-cream-3 hover:border-gold hover:bg-cream-2 transition group">
+            <span class="w-10 h-10 rounded-full bg-espresso flex items-center justify-center group-hover:bg-gold transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAF6F0" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.25em] uppercase text-gold-3">Call</div>
+              <div class="text-espresso font-medium">0806 179 7766</div>
+            </div>
+          </a>
+          <a href="tel:+2348064969682" class="flex items-center gap-3 p-4 rounded-xl border border-cream-3 hover:border-gold hover:bg-cream-2 transition group">
+            <span class="w-10 h-10 rounded-full bg-espresso flex items-center justify-center group-hover:bg-gold transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAF6F0" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.25em] uppercase text-gold-3">Call</div>
+              <div class="text-espresso font-medium">0806 496 9682</div>
+            </div>
+          </a>
+          <a href="tel:+2348162622608" class="flex items-center gap-3 p-4 rounded-xl border border-cream-3 hover:border-gold hover:bg-cream-2 transition group">
+            <span class="w-10 h-10 rounded-full bg-espresso flex items-center justify-center group-hover:bg-gold transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAF6F0" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <div class="text-[10px] tracking-[0.25em] uppercase text-gold-3">Call</div>
+              <div class="text-espresso font-medium">0816 262 2608</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Socials -->
+        <p class="text-xs tracking-[0.3em] uppercase text-gold-3 mb-4">Follow the showroom</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://instagram.com/shafa_wali_furniture_and_more" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-espresso/30 text-espresso hover:bg-espresso hover:text-cream transition text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@shafa_wali_furniture1" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-espresso/30 text-espresso hover:bg-espresso hover:text-cream transition text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.3a4.85 4.85 0 0 1-3.7-2.3h-3.1v11.6a2.85 2.85 0 1 1-2.85-2.85c.13 0 .26.01.39.03v-3.2a6.04 6.04 0 0 0-.39-.01 6.05 6.05 0 1 0 6.05 6.05V9.7a8.3 8.3 0 0 0 4.5 1.3V7.7c-.3 0-.6 0-.9-.1z"/></svg>
+            TikTok
+          </a>
+          <a href="https://www.facebook.com/search/top?q=Shafa%20Wali%20Furniture%20and%20More" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-espresso/30 text-espresso hover:bg-espresso hover:text-cream transition text-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq" class="reveal">
+        <p class="text-xs tracking-[0.35em] uppercase text-gold-3 mb-3">Before you order</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold text-espresso mb-4">Frequently Asked</h2>
+        <div class="gold-rule-l mb-8"></div>
+
+        <div class="space-y-3">
+          <details class="group bg-cream rounded-xl border border-cream-3 p-5 hover:border-gold/40 transition">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="display text-lg font-semibold text-espresso">How do I place an order?</span>
+              <span class="text-gold text-2xl leading-none group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-espresso/75 leading-relaxed">Tap any "Inquire on WhatsApp" button or message <strong class="text-espresso">+234 907 880 2181</strong>. Share the piece you want, your location, and preferred delivery date — our team confirms stock and final pricing within hours.</p>
+          </details>
+
+          <details class="group bg-cream rounded-xl border border-cream-3 p-5 hover:border-gold/40 transition">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="display text-lg font-semibold text-espresso">Do you offer custom sizes &amp; finishes?</span>
+              <span class="text-gold text-2xl leading-none group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-espresso/75 leading-relaxed">Yes. Bespoke pieces are a core part of what we do — bring measurements, fabric swatches, or a reference photo and we'll quote a custom build. Custom pieces typically take 2–4 weeks depending on complexity.</p>
+          </details>
+
+          <details class="group bg-cream rounded-xl border border-cream-3 p-5 hover:border-gold/40 transition">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="display text-lg font-semibold text-espresso">What is your refund &amp; exchange policy?</span>
+              <span class="text-gold text-2xl leading-none group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-espresso/75 leading-relaxed">Strictly <strong class="text-espresso">No Refund, No Exchange</strong>. Please inspect items in our Kaduna or Zaria showrooms, or request a live WhatsApp video preview before completing payment. This protects both our artisans and our customers.</p>
+          </details>
+
+          <details class="group bg-cream rounded-xl border border-cream-3 p-5 hover:border-gold/40 transition">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="display text-lg font-semibold text-espresso">Do you deliver outside Kaduna State?</span>
+              <span class="text-gold text-2xl leading-none group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-espresso/75 leading-relaxed">Yes — we coordinate nationwide delivery through trusted logistics partners. Shipping cost and timeline are quoted per item and destination. Live tracking is shared once dispatch is confirmed.</p>
+          </details>
+
+          <details class="group bg-cream rounded-xl border border-cream-3 p-5 hover:border-gold/40 transition">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="display text-lg font-semibold text-espresso">Can I get a video preview before paying?</span>
+              <span class="text-gold text-2xl leading-none group-open:rotate-45 transition">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-espresso/75 leading-relaxed">Absolutely. Live WhatsApp video previews are encouraged — we'll walk you through the piece, dimensions, finish, and any defects (if applicable) before you commit.</p>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-charcoal text-cream/80">
+  <div class="max-w-8xl mx-auto px-5 sm:px-8 lg:px-12 py-14 lg:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <!-- Brand -->
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 rounded-full bg-gold flex items-center justify-center">
+            <span class="display text-espresso text-2xl font-semibold leading-none">S</span>
+          </div>
+          <div>
+            <div class="display text-2xl font-semibold text-cream">Shafa Wali</div>
+            <div class="text-[10px] tracking-[0.28em] uppercase text-gold-2">Furniture &amp; More</div>
+          </div>
+        </div>
+        <p class="text-cream/65 leading-relaxed max-w-md text-sm">
+          Luxury Living, Classic Elegance &amp; Custom Craftsmanship in Kaduna &amp; Zaria. Ready-made imported collections and bespoke furniture tailored to your space.
+        </p>
+        <p class="mt-6 text-xs text-cream/50">Founder &amp; CEO — Hajjia Shafa Wali</p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="md:col-span-3">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold-2 mb-4">Explore</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#collections" class="hover:text-gold-2 transition">Collections</a></li>
+          <li><a href="#why" class="hover:text-gold-2 transition">Why Shafa Wali</a></li>
+          <li><a href="#showrooms" class="hover:text-gold-2 transition">Showrooms</a></li>
+          <li><a href="#policy" class="hover:text-gold-2 transition">Store Policy</a></li>
+          <li><a href="#faq" class="hover:text-gold-2 transition">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="md:col-span-4">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold-2 mb-4">Connect</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="https://wa.me/2349078802181" target="_blank" rel="noopener" class="hover:text-gold-2 transition">WhatsApp: +234 907 880 2181</a></li>
+          <li><a href="tel:+2348061797766" class="hover:text-gold-2 transition">Call: 0806 179 7766</a></li>
+          <li><a href="tel:+2348064969682" class="hover:text-gold-2 transition">Call: 0806 496 9682</a></li>
+          <li><a href="tel:+2348162622608" class="hover:text-gold-2 transition">Call: 0816 262 2608</a></li>
+          <li><a href="https://instagram.com/shafa_wali_furniture_and_more" target="_blank" rel="noopener" class="hover:text-gold-2 transition">Instagram: @shafa_wali_furniture_and_more</a></li>
+          <li><a href="https://tiktok.com/@shafa_wali_furniture1" target="_blank" rel="noopener" class="hover:text-gold-2 transition">TikTok: @shafa_wali_furniture1</a></li>
+          <li><a href="https://www.facebook.com/search/top?q=Shafa%20Wali%20Furniture%20and%20More" target="_blank" rel="noopener" class="hover:text-gold-2 transition">Facebook: Shafa Wali Furniture and More</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-cream/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/55">
+      <p>Copyright © 2026 Shafa Wali Furniture and More. All rights reserved.</p>
+      <p class="italic">Designed with care · Kaduna &amp; Zaria, Nigeria</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP BUTTON ============ -->
+<a href="https://wa.me/2349078802181?text=Hello%20Shafa%20Wali%20Furniture%2C%20I%27d%20like%20to%20make%20an%20inquiry."
+   target="_blank" rel="noopener"
+   aria-label="Chat on WhatsApp"
+   class="fixed bottom-5 right-5 z-50 w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#25D366] shadow-2xl flex items-center justify-center hover:scale-105 transition">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.65.15-.2.3-.76.94-.93 1.13-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.23-.55-.47-.48-.65-.49l-.55-.01c-.2 0-.5.07-.76.37-.26.3-1 .98-1 2.4 0 1.4 1.02 2.76 1.17 2.95.15.2 2.02 3.08 4.9 4.32.68.3 1.22.47 1.64.6.69.22 1.32.19 1.81.12.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.57-.35z"/><path d="M12.02 2C6.5 2 2 6.5 2 12.02c0 1.78.46 3.5 1.34 5.02L2 22l5.13-1.34a10 10 0 0 0 4.89 1.27h.01c5.52 0 10.02-4.5 10.02-10.02C22.05 6.5 17.55 2 12.02 2zm0 18.4h-.01a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.05.8.81-2.97-.2-.31a8.3 8.3 0 0 1-1.27-4.4c0-4.6 3.74-8.34 8.35-8.34 2.23 0 4.33.87 5.9 2.45a8.3 8.3 0 0 1 2.45 5.9c0 4.6-3.74 8.34-8.35 8.34z"/></svg>
+  <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-gold animate-ping"></span>
+</a>
+
+<!-- ============ JS ============ -->
+<script>
+(function() {
+  // --- Mobile menu ---
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-link').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+
+  // --- Filter tabs ---
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cards = document.querySelectorAll('#productGrid .product-card');
+  const emptyState = document.getElementById('emptyState');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const match = (f === 'all') || (card.dataset.cat === f);
+        if (match) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      if (emptyState) emptyState.classList.toggle('hidden', visible > 0);
+    });
+  });
+
+  // --- WhatsApp product inquiry ---
+  const WA_NUMBER = '2349078802181';
+  const WA_GREETING = "Hello Shafa Wali Furniture, I'd like to inquire about the ";
+  document.querySelectorAll('.wa-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const product = btn.dataset.waProduct || 'your furniture pieces';
+      const msg = WA_GREETING + product + ". Could you please share availability, dimensions, finishes, and current pricing?";
+      const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  // --- Reveal on scroll ---
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // --- Navbar shadow on scroll ---
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('shadow-soft');
+    } else {
+      nav.classList.remove('shadow-soft');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
